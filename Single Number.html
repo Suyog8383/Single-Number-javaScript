@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>Single Number</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  let nums = [4, 5, 5];
+  function findSingleNumber(nums) {
+    let obj = {};
+    for (let i = 0; i < nums.length; i++) {
+      if (obj.hasOwnProperty(nums[i])) {
+        obj[nums[i]]++;
+      } else {
+        obj[nums[i]] = 1;
+      }
+    }
+    console.log("@SN ", obj);
+    for (let a in obj) {
+      console.log("@SN ", a, obj[a]);
+      if (obj[a] === 1) {
+        console.log("@SN ", a);
+        return a;
+      }
+    }
+  }
+
+  console.log(findSingleNumber(nums));
+</script>
